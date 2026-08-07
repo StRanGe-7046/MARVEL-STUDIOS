@@ -17,7 +17,7 @@ export default function TrailerModal({ isOpen, onClose }) {
           autoPlay
           playsInline
         >
-          <source src="/Avengers Doomsday  Official Trailer.mp4" type="video/mp4" />
+          <source src={encodeURI('/Avengers Doomsday  Official Trailer.mp4')} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 

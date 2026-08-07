@@ -4,7 +4,7 @@ import './MarvelIntro.css';
 const FADE_DURATION = 700;
 // Vite serves files in /public unchanged. This avoids a build-time error before
 // the user adds the optional intro video.
-const marvelIntroVideo = `${import.meta.env.BASE_URL}public/Marvel Studios intro.mp4`;
+const marvelIntroVideo = encodeURI(`${import.meta.env.BASE_URL}Marvel Studios intro.mp4`);
 
 function MarvelIntro({ onDismiss }) {
   const videoRef = useRef(null);
