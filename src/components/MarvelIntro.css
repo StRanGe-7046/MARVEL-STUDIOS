@@ -1,0 +1,118 @@
+.marvel-intro {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #020202;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 700ms ease, visibility 700ms ease;
+}
+
+.marvel-intro--leaving {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.marvel-intro__video {
+  width: 100%;
+  height: 100%;
+  /* Preserve the entire supplied video frame at its native quality. */
+  object-fit: contain;
+  object-position: center;
+  background: #020202;
+}
+
+.marvel-intro__vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, 0.3) 100%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.32), transparent 25%, transparent 75%, rgba(0, 0, 0, 0.32));
+}
+
+.marvel-intro__prompt {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  padding: 24px;
+  text-align: center;
+}
+
+.marvel-intro__prompt p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.42em;
+}
+
+.marvel-intro__play,
+.marvel-intro__skip {
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+}
+
+.marvel-intro__play {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(125, 8, 15, 0.78);
+  box-shadow: 0 0 0 1px rgba(255, 45, 45, 0.2), 0 8px 30px rgba(0, 0, 0, 0.5);
+  font-size: 0.8rem;
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.marvel-intro__play:hover,
+.marvel-intro__play:focus-visible {
+  background: #a30b16;
+  box-shadow: 0 0 22px rgba(205, 23, 34, 0.48);
+  outline: none;
+  transform: scale(1.04);
+}
+
+.marvel-intro__skip {
+  position: absolute;
+  z-index: 1;
+  right: clamp(16px, 3vw, 40px);
+  bottom: clamp(16px, 3vw, 34px);
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: rgba(0, 0, 0, 0.36);
+  font-size: 0.64rem;
+  transition: border-color 180ms ease, background 180ms ease;
+}
+
+.marvel-intro__skip:hover,
+.marvel-intro__skip:focus-visible {
+  border-color: #fff;
+  background: rgba(125, 8, 15, 0.7);
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  .marvel-intro__play {
+    padding: 15px 22px;
+    font-size: 0.72rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marvel-intro,
+  .marvel-intro__play,
+  .marvel-intro__skip {
+    transition-duration: 1ms;
+  }
+}
