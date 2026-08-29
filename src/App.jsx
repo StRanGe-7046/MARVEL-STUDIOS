@@ -10,9 +10,6 @@ import MediaSection from './components/MediaSection';
 import Footer from './components/Footer';
 import TrailerModal from './components/TrailerModal';
 import MarvelIntro from './components/MarvelIntro';
-import InfinityHero from './components/InfinityTimeline/InfinityHero';
-import InfinityTimeline from './components/InfinityTimeline/InfinityTimeline';
-import InfinityFooter from './components/InfinityTimeline/InfinityFooter';
 
 // Load Google Material Symbols
 const materialSymbolsLink = document.createElement('link');
@@ -35,23 +32,12 @@ function App() {
     <>
       {introOpen && <MarvelIntro onDismiss={() => setIntroOpen(false)} />}
       <Navbar onWatchTrailer={openTrailer} />
-
-      <main>
-        <div id="hero">
-          <Hero onWatchTrailer={openTrailer} onExploreCast={scrollToCast} />
-        </div>
-
-        <InfinityHero />
-        <InfinityTimeline />
-
-        <Countdown />
-        <DoctorSection />
-        <CastSection />
-        <Timeline />
-        <MediaSection onWatchTrailer={openTrailer} />
-        <InfinityFooter />
-      </main>
-
+      <Hero onWatchTrailer={openTrailer} onExploreCast={scrollToCast} />
+      <Countdown />
+      <DoctorSection />
+      <CastSection />
+      <Timeline />
+      <MediaSection onWatchTrailer={openTrailer} />
       <Footer />
       <TrailerModal isOpen={trailerOpen} onClose={closeTrailer} />
     </>
@@ -59,4 +45,3 @@ function App() {
 }
 
 export default App;
-

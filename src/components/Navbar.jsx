@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 export default function Navbar({ onWatchTrailer }) {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('infinity');
+  const [activeSection, setActiveSection] = useState('synopsis');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -10,50 +10,45 @@ export default function Navbar({ onWatchTrailer }) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const navItems = [
-    { label: 'DOOMSDAY', targetId: 'hero' },
-    { label: 'INFINITY SAGA', targetId: 'infinity-saga' },
-    { label: 'PHASES', targetId: 'phase-1' },
-    { label: 'MOVIES', targetId: 'movie-1' },
-  ];
-
-  const handleNavClick = (e, targetId) => {
-    e.preventDefault();
-    const el = document.getElementById(targetId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(targetId);
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
+  useEffect(() => {
+    const sections = ['synopsis', 'cast', 'intel', 'countdown'];
+    const observers = sections.map(id => {
+      const el = document.getElementById(id);
+      if (!el) return null;
+      const observer = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
+        { threshold: 0.3 }
+      );
+      observer.observe(el);
+      return observer;
+    });
+    return () => observers.forEach(o => o && o.disconnect());
+  }, []);
 
   return (
     <nav className={`nav-bar${scrolled ? ' scrolled' : ''}`}>
       <div className="nav-inner">
-        <div className="nav-logo" onClick={(e) => handleNavClick(e, 'hero')}>
-          AVENGERS: DOOMSDAY
-        </div>
+        <div className="nav-logo">AVENGERS: DOOMSDAY</div>
         <ul className="nav-links">
-          {navItems.map((item) => (
-            <li key={item.label}>
+          {['Synopsis', 'Cast', 'Intel', 'Countdown'].map(item => (
+            <li key={item}>
               <a
-                href={`#${item.targetId}`}
-                className={activeSection === item.targetId ? 'active' : ''}
-                onClick={(e) => handleNavClick(e, item.targetId)}
+                href={`#${item.toLowerCase()}`}
+                className={activeSection === item.toLowerCase() ? 'active' : ''}
+                onClick={e => {
+                  e.preventDefault();
+                  document.getElementById(item.toLowerCase())?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
-                {item.label}
+                {item}
               </a>
             </li>
           ))}
         </ul>
-        {onWatchTrailer && (
-          <button className="nav-btn" onClick={onWatchTrailer} id="nav-watch-trailer">
-            Watch Trailer
-          </button>
-        )}
+        <button className="nav-btn" onClick={onWatchTrailer} id="nav-watch-trailer">
+          Watch Trailer
+        </button>
       </div>
     </nav>
   );
 }
-
