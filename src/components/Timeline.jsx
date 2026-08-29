@@ -7,11 +7,9 @@ const TIMELINE = [
     title: 'THE INFINITY SAGA',
     desc: 'The era of the stones. The emergence of heroes and the first universal threat.',
     dateColor: 'var(--outline)',
-    dotColor: 'var(--primary-fixed)',
-    dotShadow: '0 0 15px rgba(125, 244, 255, 0.6)',
+    dotColor: 'var(--outline-variant)',
+    dotShadow: 'none',
     pulse: false,
-    interactive: true,
-    actionText: 'EXPLORE ARCHIVE →',
   },
   {
     id: 'multiverse',
@@ -19,10 +17,9 @@ const TIMELINE = [
     title: 'THE MULTIVERSE SAGA',
     desc: 'Reality fracturing. Variants and incursions threaten the very fabric of existence.',
     dateColor: 'var(--primary-fixed)',
-    dotColor: 'var(--outline-variant)',
-    dotShadow: 'none',
+    dotColor: 'var(--primary-fixed)',
+    dotShadow: '0 0 15px rgba(125, 244, 255, 0.6)',
     pulse: false,
-    interactive: false,
   },
   {
     id: 'doomsday',
@@ -33,7 +30,6 @@ const TIMELINE = [
     dotColor: 'var(--secondary)',
     dotShadow: 'none',
     pulse: true,
-    interactive: false,
   },
 ];
 
@@ -50,15 +46,6 @@ export default function Timeline() {
     return () => observer.disconnect();
   }, []);
 
-  const handleCardClick = (id) => {
-    if (id === 'infinity') {
-      const el = document.getElementById('infinity-saga');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
   return (
     <section className="timeline-section" ref={sectionRef}>
       <div className="timeline-inner">
@@ -71,11 +58,8 @@ export default function Timeline() {
           <div className={`timeline-grid reveal${visible ? ' visible' : ''}`} style={{ transitionDelay: '0.2s' }}>
             {TIMELINE.map(item => (
               <div key={item.id} className="timeline-card-wrapper">
-                <div
-                  className={`timeline-card glass-card${item.pulse ? ' threat-pulse' : ''}${item.interactive ? ' clickable-saga-card' : ''}`}
-                  onClick={() => handleCardClick(item.id)}
-                  style={{ cursor: item.interactive ? 'pointer' : 'default' }}
-                >
+                <div className={`timeline-card glass-card${item.pulse ? ' threat-pulse' : ''}`}
+                  style={item.pulse ? {} : {}}>
                   <span
                     className="timeline-date"
                     style={{ color: item.dateColor }}
@@ -84,12 +68,6 @@ export default function Timeline() {
                   </span>
                   <h3 className="timeline-card-title">{item.title}</h3>
                   <p className="timeline-card-desc">{item.desc}</p>
-
-                  {item.interactive && (
-                    <div className="timeline-card-action">
-                      <span className="action-pill">{item.actionText}</span>
-                    </div>
-                  )}
                 </div>
                 <div
                   className="timeline-dot"
@@ -103,4 +81,3 @@ export default function Timeline() {
     </section>
   );
 }
-
