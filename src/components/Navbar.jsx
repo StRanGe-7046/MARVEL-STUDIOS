@@ -11,7 +11,7 @@ export default function Navbar({ onWatchTrailer, activePage, onNavigate }) {
 
   const handleLinkClick = (e, target) => {
     e.preventDefault();
-    if (target === 'doomsday' || target === 'infinity-saga') {
+    if (target === 'doomsday' || target === 'infinity-saga' || target === 'watch-guide') {
       if (onNavigate) onNavigate(target);
     } else {
       const el = document.getElementById(target);
@@ -29,48 +29,36 @@ export default function Navbar({ onWatchTrailer, activePage, onNavigate }) {
         </div>
 
         <ul className="nav-links">
-          {activePage === 'infinity-saga' ? (
-            <>
-              <li>
-                <a href="#doomsday" onClick={(e) => handleLinkClick(e, 'doomsday')} style={{ color: 'var(--primary-fixed)' }}>
-                  ← BACK TO DOOMSDAY
-                </a>
-              </li>
-              <li>
-                <a href="#infinity-saga" className="active">
-                  INFINITY SAGA
-                </a>
-              </li>
-              <li>
-                <a href="#phase-1" onClick={(e) => handleLinkClick(e, 'phase-1')}>
-                  PHASES
-                </a>
-              </li>
-              <li>
-                <a href="#movie-1" onClick={(e) => handleLinkClick(e, 'movie-1')}>
-                  MOVIES
-                </a>
-              </li>
-            </>
-          ) : (
-            <>
-              <li>
-                <a href="#hero" className="active" onClick={(e) => handleLinkClick(e, 'hero')}>
-                  DOOMSDAY
-                </a>
-              </li>
-              <li>
-                <a href="#infinity-saga" onClick={(e) => handleLinkClick(e, 'infinity-saga')}>
-                  INFINITY SAGA PAGE
-                </a>
-              </li>
-              <li>
-                <a href="#cast" onClick={(e) => handleLinkClick(e, 'cast')}>
-                  CAST
-                </a>
-              </li>
-            </>
-          )}
+          <li>
+            <a
+              href="#doomsday"
+              className={activePage === 'doomsday' ? 'active' : ''}
+              onClick={(e) => handleLinkClick(e, 'doomsday')}
+            >
+              DOOMSDAY
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#infinity-saga"
+              className={activePage === 'infinity-saga' ? 'active' : ''}
+              onClick={(e) => handleLinkClick(e, 'infinity-saga')}
+            >
+              INFINITY SAGA
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#watch-guide"
+              className={activePage === 'watch-guide' ? 'active' : ''}
+              onClick={(e) => handleLinkClick(e, 'watch-guide')}
+              style={{ color: activePage === 'watch-guide' ? '#7df4ff' : undefined }}
+            >
+              WATCH GUIDE
+            </a>
+          </li>
         </ul>
 
         {onWatchTrailer && (
@@ -82,5 +70,6 @@ export default function Navbar({ onWatchTrailer, activePage, onNavigate }) {
     </nav>
   );
 }
+
 
 

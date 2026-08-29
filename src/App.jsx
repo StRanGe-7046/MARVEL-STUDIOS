@@ -13,6 +13,7 @@ import MarvelIntro from './components/MarvelIntro';
 import InfinityHero from './components/InfinityTimeline/InfinityHero';
 import InfinityTimeline from './components/InfinityTimeline/InfinityTimeline';
 import InfinityFooter from './components/InfinityTimeline/InfinityFooter';
+import WatchGuide from './pages/WatchGuide/WatchGuide';
 
 // Load Google Material Symbols
 const materialSymbolsLink = document.createElement('link');
@@ -24,12 +25,18 @@ function App() {
   const [trailerOpen, setTrailerOpen] = useState(false);
   const [introOpen, setIntroOpen] = useState(true);
   const [activePage, setActivePage] = useState(() => {
-    return window.location.hash === '#infinity-saga' ? 'infinity-saga' : 'doomsday';
+    const hash = window.location.hash;
+    if (hash === '#watch-guide') return 'watch-guide';
+    if (hash === '#infinity-saga') return 'infinity-saga';
+    return 'doomsday';
   });
 
   useEffect(() => {
     const handleHashChange = () => {
-      if (window.location.hash === '#infinity-saga') {
+      const hash = window.location.hash;
+      if (hash === '#watch-guide') {
+        setActivePage('watch-guide');
+      } else if (hash === '#infinity-saga') {
         setActivePage('infinity-saga');
       } else {
         setActivePage('doomsday');
@@ -42,7 +49,7 @@ function App() {
 
   const navigateTo = (pageName) => {
     setActivePage(pageName);
-    window.location.hash = pageName === 'infinity-saga' ? '#infinity-saga' : '#doomsday';
+    window.location.hash = `#${pageName}`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -63,7 +70,10 @@ function App() {
       />
 
       <main>
-        {activePage === 'infinity-saga' ? (
+        {activePage === 'watch-guide' ? (
+          /* SEPARATE PAGE: MCU WATCH GUIDE */
+          <WatchGuide onNavigate={navigateTo} />
+        ) : activePage === 'infinity-saga' ? (
           /* SEPARATE PAGE: THE INFINITY SAGA */
           <div className="infinity-saga-page fade-in-up">
             <InfinityHero />
@@ -92,5 +102,6 @@ function App() {
 }
 
 export default App;
+
 
 
