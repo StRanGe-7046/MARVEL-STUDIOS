@@ -49,6 +49,7 @@ export default function MovieModal({ movie, isOpen, onClose, onNavigate, totalMo
           </button>
 
           <div className="modal-body-scroll">
+            {/* Header Hero Banner */}
             <div className="modal-hero-banner">
               <div className="modal-poster-wrap">
                 <img
@@ -65,9 +66,15 @@ export default function MovieModal({ movie, isOpen, onClose, onNavigate, totalMo
                   <span className="modal-num-pill">#{movie.number}</span>
                   <span className="modal-year-pill">{movie.releaseYear}</span>
                   <span className="modal-runtime-pill">{movie.runtime}</span>
+                  {movie.boxOffice && <span className="modal-boxoffice-pill">{movie.boxOffice}</span>}
                 </div>
 
                 <h2 className="modal-movie-title">{movie.title}</h2>
+                
+                {movie.tagline && (
+                  <p className="modal-tagline-text">"{movie.tagline}"</p>
+                )}
+
                 <p className="modal-release-date">Theatrical Release: {movie.releaseDate}</p>
 
                 <div className="modal-tags">
@@ -80,17 +87,34 @@ export default function MovieModal({ movie, isOpen, onClose, onNavigate, totalMo
               </div>
             </div>
 
+            {/* Main Content Layout Grid */}
             <div className="modal-content-grid">
               <div className="modal-main-col">
                 <section className="modal-section">
-                  <h4 className="modal-section-title">SYNOPSIS</h4>
+                  <h4 className="modal-section-title">FULL SYNOPSIS</h4>
                   <p className="modal-text">{movie.synopsis}</p>
                 </section>
 
                 <section className="modal-section">
-                  <h4 className="modal-section-title">INFINITY SAGA CONNECTION</h4>
+                  <h4 className="modal-section-title">INFINITY SAGA LORE CONNECTION</h4>
                   <p className="modal-text highlight-box">{movie.infinityConnection}</p>
                 </section>
+
+                {movie.quote && (
+                  <section className="modal-section">
+                    <h4 className="modal-section-title">MEMORABLE QUOTE</h4>
+                    <blockquote className="modal-quote-box">
+                      "{movie.quote}"
+                    </blockquote>
+                  </section>
+                )}
+
+                {movie.postCredits && (
+                  <section className="modal-section">
+                    <h4 className="modal-section-title">POST-CREDITS SCENE</h4>
+                    <p className="modal-text postcredits-box">{movie.postCredits}</p>
+                  </section>
+                )}
 
                 <section className="modal-section">
                   <h4 className="modal-section-title">MCU SIGNIFICANCE</h4>
@@ -99,13 +123,20 @@ export default function MovieModal({ movie, isOpen, onClose, onNavigate, totalMo
               </div>
 
               <div className="modal-side-col">
+                {movie.stone && (
+                  <div className="modal-info-card stone-card">
+                    <span className="info-label">INFINITY STONE / ARTIFACT</span>
+                    <span className="info-value stone-value">{movie.stone}</span>
+                  </div>
+                )}
+
                 <div className="modal-info-card">
                   <span className="info-label">DIRECTED BY</span>
                   <span className="info-value">{movie.director}</span>
                 </div>
 
                 <div className="modal-info-card">
-                  <span className="info-label">KEY CAST</span>
+                  <span className="info-label">STARRING CAST</span>
                   <ul className="cast-list">
                     {movie.cast.map((actor) => (
                       <li key={actor}>{actor}</li>
@@ -115,6 +146,7 @@ export default function MovieModal({ movie, isOpen, onClose, onNavigate, totalMo
               </div>
             </div>
 
+            {/* Navigation Controls Bar */}
             <div className="modal-navigation-bar">
               <button
                 className={`modal-nav-btn prev ${!hasPrev ? 'disabled' : ''}`}
@@ -142,3 +174,4 @@ export default function MovieModal({ movie, isOpen, onClose, onNavigate, totalMo
     </AnimatePresence>
   );
 }
+

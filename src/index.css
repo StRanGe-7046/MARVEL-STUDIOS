@@ -1302,6 +1302,62 @@ body {
   }
 }
 
+/* Modal Enhancements */
+.modal-boxoffice-pill {
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: rgba(125, 244, 255, 0.1);
+  border: 1px solid rgba(125, 244, 255, 0.3);
+  color: var(--primary-fixed);
+}
+
+.modal-tagline-text {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--primary-fixed-dim);
+  margin-bottom: 8px;
+}
+
+.modal-quote-box {
+  margin: 0;
+  padding: 16px 20px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid var(--secondary);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--on-surface);
+}
+
+.postcredits-box {
+  padding: 16px 20px;
+  border-radius: 8px;
+  background: rgba(125, 244, 255, 0.04);
+  border: 1px dashed rgba(125, 244, 255, 0.3);
+  color: var(--on-surface-variant);
+}
+
+.stone-card {
+  border-color: rgba(125, 244, 255, 0.3) !important;
+  background: rgba(125, 244, 255, 0.06) !important;
+}
+
+.stone-value {
+  color: var(--primary-fixed) !important;
+}
+
+.about-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
 /* ==========================================================================
    THE INFINITY SAGA CINEMATIC TIMELINE STYLES
    ========================================================================== */

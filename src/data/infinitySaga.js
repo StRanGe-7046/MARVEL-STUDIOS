@@ -19,6 +19,9 @@ export const infinitySagaMovies = [
     significance: "Launched the Marvel Cinematic Universe and introduced Tony Stark, who anchors the saga through Endgame.",
     boxOffice: "$585.8 Million",
     tagline: "Heroes aren't born. They're built.",
+    stone: "Space Stone (Mentioned indirectly via Howard Stark's research)",
+    quote: "I am Iron Man.",
+    postCredits: "Nick Fury visits Tony Stark in his Malibu home to introduce the 'Avengers Initiative'.",
     tags: ["Phase One", "Origin", "Tech"]
   },
   {
@@ -40,6 +43,9 @@ export const infinitySagaMovies = [
     significance: "Established SHIELD's active tracking of enhanced individuals across the globe.",
     boxOffice: "$264.8 Million",
     tagline: "You'll like him when he's angry.",
+    stone: "None",
+    quote: "Hulk... SMASH!",
+    postCredits: "Tony Stark approaches General Ross in a bar, revealing that a specialized team is being put together.",
     tags: ["Phase One", "Gamma", "SHIELD"]
   },
   {
@@ -61,6 +67,9 @@ export const infinitySagaMovies = [
     significance: "Expanded SHIELD's role and established War Machine as a key ally.",
     boxOffice: "$623.9 Million",
     tagline: "It's not the armor. It's the man.",
+    stone: "Space Stone (Referenced in Howard Stark's journal notes)",
+    quote: "If you could make God bleed, people would cease to believe in Him.",
+    postCredits: "Agent Phil Coulson drives to a crater in New Mexico and finds Mjolnir, Thor's hammer.",
     tags: ["Phase One", "Black Widow", "Vibranium"]
   },
   {
@@ -82,6 +91,9 @@ export const infinitySagaMovies = [
     significance: "Brought cosmic lore and magic into the MCU hierarchy.",
     boxOffice: "$449.3 Million",
     tagline: "The courage to be a hero.",
+    stone: "Space Stone (Inside the Tesseract cube)",
+    quote: "Whosoever holds this hammer, if he be worthy, shall possess the power of Thor.",
+    postCredits: "Nick Fury shows Erik Selvig a glowing blue cube (Tesseract) inside a SHIELD facility.",
     tags: ["Phase One", "Asgard", "Cosmic"]
   },
   {
@@ -103,6 +115,9 @@ export const infinitySagaMovies = [
     significance: "Established Steve Rogers' moral core and the origin of the Infinity Stones on Earth.",
     boxOffice: "$370.6 Million",
     tagline: "When patriots become heroes.",
+    stone: "Space Stone (Blue Tesseract)",
+    quote: "I can do this all day.",
+    postCredits: "Steve Rogers wakes up in 21st-century Times Square and meets Nick Fury.",
     tags: ["Phase One", "Space Stone", "Super Soldier"]
   },
   {
@@ -124,6 +139,9 @@ export const infinitySagaMovies = [
     significance: "Unified Earth's heroes into the Avengers and teased the ultimate saga antagonist.",
     boxOffice: "$1.519 Billion",
     tagline: "Some assembly required.",
+    stone: "Space Stone (Tesseract) & Mind Stone (Loki's Scepter)",
+    quote: "That's my secret, Cap: I'm always angry.",
+    postCredits: "The Other warns Thanos that challenging humans is to court Death; Thanos turns and smiles.",
     tags: ["Phase One", "Mind Stone", "Thanos"]
   },
 
@@ -147,6 +165,9 @@ export const infinitySagaMovies = [
     significance: "Kicked off Phase Two with Stark's realization that cosmic threats require greater preparation.",
     boxOffice: "$1.215 Billion",
     tagline: "Unleash the power behind the armor.",
+    stone: "None",
+    quote: "You can take away my house, all my tricks and toys. One thing you can't take away... I am Iron Man.",
+    postCredits: "Tony Stark finishes telling his therapy story to Bruce Banner, who fell asleep.",
     tags: ["Phase Two", "PTSD", "Armors"]
   },
   {
@@ -168,6 +189,9 @@ export const infinitySagaMovies = [
     significance: "Directly revealed that the Infinity Stones were being collected across the galaxy.",
     boxOffice: "$644.8 Million",
     tagline: "Delve into the darkness.",
+    stone: "Reality Stone (The Aether)",
+    quote: "I would rather be a good man than a great king.",
+    postCredits: "Volstagg and Sif hand the Aether to The Collector, noting it is unwise to keep two Infinity Stones together.",
     tags: ["Phase Two", "Reality Stone", "Aether"]
   },
   {
@@ -189,6 +213,9 @@ export const infinitySagaMovies = [
     significance: "Established the Russo Brothers' grounded, high-stakes cinematic direction for MCU's climax.",
     boxOffice: "$714.4 Million",
     tagline: "In heroes we trust. In power we fear.",
+    stone: "Mind Stone (Inside Loki's Scepter at Baron Strucker's facility)",
+    quote: "The price of freedom is high. It always has been. And it's a price I'm willing to pay.",
+    postCredits: "Baron Strucker inspects Wanda and Pietro Maximoff in glass cells alongside Loki's scepter.",
     tags: ["Phase Two", "HYDRA", "Winter Soldier"]
   },
   {
@@ -210,6 +237,9 @@ export const infinitySagaMovies = [
     significance: "Introduced Gamora and Nebula, Thanos' daughters, and established cosmic stakes.",
     boxOffice: "$773.3 Million",
     tagline: "You're welcome.",
+    stone: "Power Stone (Purple Orb)",
+    quote: "We are Groot.",
+    postCredits: "The Collector sits in his destroyed museum sharing a drink with Howard the Duck.",
     tags: ["Phase Two", "Power Stone", "Cosmic"]
   },
   {
@@ -231,6 +261,9 @@ export const infinitySagaMovies = [
     significance: "Thanos retrieves the Infinity Gauntlet personally in the mid-credits scene, declaring 'I'll do it myself.'",
     boxOffice: "$1.405 Billion",
     tagline: "A new age begins.",
+    stone: "Mind Stone (Embedded in Vision's forehead)",
+    quote: "Fine. I'll do it myself.",
+    postCredits: "Thanos opens a vault, puts on the empty Infinity Gauntlet, and decides to retrieve the stones personally.",
     tags: ["Phase Two", "Mind Stone", "Vision"]
   },
   {
@@ -252,6 +285,9 @@ export const infinitySagaMovies = [
     significance: "Concluded Phase Two and laid the groundwork for time travel via subatomic physics.",
     boxOffice: "$519.3 Million",
     tagline: "Heroes don't get any bigger.",
+    stone: "None (Introduces Quantum Realm Physics)",
+    quote: "Baskin-Robbins always finds out.",
+    postCredits: "Hank Pym reveals the prototype Wasp suit to Hope van Dyne.",
     tags: ["Phase Two", "Quantum Realm", "Pym Tech"]
   },
 
@@ -275,6 +311,9 @@ export const infinitySagaMovies = [
     significance: "Introduced Black Panther and Spider-Man to the MCU.",
     boxOffice: "$1.153 Billion",
     tagline: "Divided we fall.",
+    stone: "Mind Stone (Worn by Vision)",
+    quote: "He's my friend. - So was I.",
+    postCredits: "Bucky Barnes goes into cryogenic sleep in Wakanda under King T'Challa's protection.",
     tags: ["Phase Three", "Divided", "Sokovia Accords"]
   },
   {
@@ -296,6 +335,9 @@ export const infinitySagaMovies = [
     significance: "Established temporal magic and Strange's duty to safeguard reality.",
     boxOffice: "$677.8 Million",
     tagline: "Open your mind. Change your reality.",
+    stone: "Time Stone (Green Eye of Agamotto)",
+    quote: "Dormammu, I've come to bargain!",
+    postCredits: "Thor meets Doctor Strange at the Sanctum Sanctorum seeking help to locate Odin.",
     tags: ["Phase Three", "Time Stone", "Mystic Arts"]
   },
   {
@@ -317,6 +359,9 @@ export const infinitySagaMovies = [
     significance: "Solidified the Guardians' bonds right before their tragic encounter with Thanos.",
     boxOffice: "$863.8 Million",
     tagline: "Obviously.",
+    stone: "None",
+    quote: "He may have been your father, boy, but he wasn't your daddy.",
+    postCredits: "Ayesha creates Adam Warlock in a cocoon to defeat the Guardians.",
     tags: ["Phase Three", "Celestial", "Family"]
   },
   {
@@ -338,6 +383,9 @@ export const infinitySagaMovies = [
     significance: "Integrated Spider-Man fully into the MCU narrative ecosystem.",
     boxOffice: "$880.2 Million",
     tagline: "Homework can wait. The city can't.",
+    stone: "None",
+    quote: "If you're nothing without this suit, then you shouldn't have it.",
+    postCredits: "Captain America delivers a funny public service announcement video on patience.",
     tags: ["Phase Three", "Spider-Man", "Stark Tech"]
   },
   {
@@ -359,6 +407,9 @@ export const infinitySagaMovies = [
     significance: "Lead-in directly to Thanos' warship intercepting the Asgardian refugees.",
     boxOffice: "$854.0 Million",
     tagline: "No hammer. No problem.",
+    stone: "Space Stone (Retrieved from Asgard's vault by Loki)",
+    quote: "He's a friend from work!",
+    postCredits: "Thanos' massive flagship, Sanctuary II, looms ominously over Thor and Loki's refugee ship.",
     tags: ["Phase Three", "Tesseract", "Asgard Fall"]
   },
   {
@@ -380,6 +431,9 @@ export const infinitySagaMovies = [
     significance: "Cultural milestone that prepared the stage for the climax of Infinity War.",
     boxOffice: "$1.347 Billion",
     tagline: "Long live the king.",
+    stone: "None (Vibranium Meteorite Origin)",
+    quote: "Wakanda Forever!",
+    postCredits: "Bucky Barnes emerges from a hut in Wakanda, thanked by Shuri as the 'White Wolf'.",
     tags: ["Phase Three", "Wakanda", "Vibranium"]
   },
   {
@@ -401,6 +455,9 @@ export const infinitySagaMovies = [
     significance: "The darkest chapter of the MCU and the ultimate culmination of 10 years of storytelling.",
     boxOffice: "$2.048 Billion",
     tagline: "An entire universe. Once decision.",
+    stone: "All 6 Infinity Stones (Power, Space, Reality, Soul, Time, Mind)",
+    quote: "You should have gone for the head. *SNAP*",
+    postCredits: "Nick Fury sends a distress signal to Captain Marvel on a modified pager before disintegrating into dust.",
     tags: ["Phase Three", "The Snap", "Infinity Gauntlet"]
   },
   {
@@ -422,6 +479,9 @@ export const infinitySagaMovies = [
     significance: "Crucial bridge that unlocked the physics necessary to reverse the Decimation.",
     boxOffice: "$622.7 Million",
     tagline: "Real heroes. Not actual size.",
+    stone: "None (Quantum Healing Particles)",
+    quote: "Do you guys just put 'Quantum' in front of everything?",
+    postCredits: "Hank, Janet, and Hope vanish into dust from Thanos' snap while Scott is stranded in the Quantum Realm.",
     tags: ["Phase Three", "Quantum Realm", "Post-Snap"]
   },
   {
@@ -443,6 +503,9 @@ export const infinitySagaMovies = [
     significance: "Introduced Earth's cosmic heavy-hitter summoned to rescue the surviving Avengers.",
     boxOffice: "$1.128 Billion",
     tagline: "Higher. Further. Faster.",
+    stone: "Space Stone (Energy Source of Light-Speed Engine)",
+    quote: "I have nothing to prove to you.",
+    postCredits: "Carol Danvers responds to Nick Fury's pager at Avengers Compound, asking 'Where's Fury?'",
     tags: ["Phase Three", "Space Stone", "Cosmic Hero"]
   },
   {
@@ -464,6 +527,9 @@ export const infinitySagaMovies = [
     significance: "The definitive grand finale of The Infinity Saga and Tony Stark's heroic sacrifice.",
     boxOffice: "$2.798 Billion",
     tagline: "Part of the journey is the end.",
+    stone: "All 6 Infinity Stones (Retrieved via Time Heist)",
+    quote: "Avengers... ASSEMBLE.",
+    postCredits: "Sound of Tony Stark forging the original Mark I Iron Man armor in the cave.",
     tags: ["Phase Three", "Time Heist", "Endgame"]
   },
   {
@@ -485,6 +551,9 @@ export const infinitySagaMovies = [
     significance: "The official epilogue to The Infinity Saga.",
     boxOffice: "$1.132 Billion",
     tagline: "It's time to step up.",
+    stone: "EDITH Stark Glasses Tech",
+    quote: "Everywhere I go, I see his face.",
+    postCredits: "J. Jonah Jameson broadcasts Mysterio's doctored footage, publicly revealing Peter Parker as Spider-Man.",
     tags: ["Phase Three", "Epilogue", "Iron Man Legacy"]
   }
 ];
