@@ -10,11 +10,19 @@ export default function AboutMovieBlock({ movie, isRightSide }) {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="about-block-inner glass-card">
-        <span className="about-tag">[ABOUT_FILM]</span>
+        <div className="about-header-row">
+          <span className="about-tag">[ABOUT_FILM #{movie.number}]</span>
+          {movie.boxOffice && <span className="about-box-office">{movie.boxOffice}</span>}
+        </div>
+
         <div className="about-title-row">
           <h4 className="about-movie-title">{movie.title}</h4>
           <span className="about-year">{movie.releaseYear}</span>
         </div>
+
+        {movie.tagline && (
+          <p className="about-tagline">"{movie.tagline}"</p>
+        )}
 
         <div className="about-divider" />
 
@@ -28,13 +36,19 @@ export default function AboutMovieBlock({ movie, isRightSide }) {
           <p className="about-val highlight">{movie.infinityConnection}</p>
         </div>
 
+        <div className="about-section">
+          <span className="about-label">MCU SIGNIFICANCE</span>
+          <p className="about-val">{movie.significance}</p>
+        </div>
+
         {movie.cast && movie.cast.length > 0 && (
           <div className="about-section">
-            <span className="about-label">KEY CAST</span>
-            <p className="about-val">{movie.cast.slice(0, 3).join(', ')}</p>
+            <span className="about-label">STARRING</span>
+            <p className="about-val">{movie.cast.join(', ')}</p>
           </div>
         )}
       </div>
     </motion.div>
   );
 }
+

@@ -32,8 +32,8 @@ export default function MovieCard({ movie, onSelect, isRightSide }) {
 
         <div className="movie-card-content">
           <div className="movie-card-header">
-            <span className="movie-year">{movie.releaseYear}</span>
-            <span className="movie-runtime">{movie.runtime}</span>
+            <span className="movie-year">{movie.releaseYear} • {movie.runtime}</span>
+            {movie.boxOffice && <span className="movie-box-office">{movie.boxOffice}</span>}
           </div>
 
           <h3 className="movie-title">{movie.title}</h3>
@@ -54,3 +54,4 @@ export default function MovieCard({ movie, onSelect, isRightSide }) {
     </motion.div>
   );
 }
+

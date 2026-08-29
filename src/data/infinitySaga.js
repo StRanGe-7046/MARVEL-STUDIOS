@@ -12,11 +12,13 @@ export const infinitySagaMovies = [
     runtime: "126 min",
     director: "Jon Favreau",
     cast: ["Robert Downey Jr.", "Gwyneth Paltrow", "Jeff Bridges", "Terrence Howard"],
-    poster: "https://image.tmdb.org/t/p/w500/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/cyecB7godJ6kPZAkCOJgLwqVLw.jpg",
     synopsis: "After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil and becomes Iron Man.",
     infinityConnection: "The origin of Tony Stark and the spark that ignites Nick Fury's Avengers Initiative.",
     significance: "Launched the Marvel Cinematic Universe and introduced Tony Stark, who anchors the saga through Endgame.",
+    boxOffice: "$585.8 Million",
+    tagline: "Heroes aren't born. They're built.",
     tags: ["Phase One", "Origin", "Tech"]
   },
   {
@@ -31,11 +33,13 @@ export const infinitySagaMovies = [
     runtime: "112 min",
     director: "Louis Leterrier",
     cast: ["Edward Norton", "Liv Tyler", "Tim Roth", "William Hurt"],
-    poster: "https://image.tmdb.org/t/p/w500/1hRoyzDtpgMUvVdKJ2zqRUZKMpq.jpg",
-    backdrop: "https://image.tmdb.org/t/p/w1280/k7eTq9t0C2rLdZ0HkL0K9Z.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMTUyNzk3MjA1OF5BMl5BanBnXkFtZTcwMTE1Njg2MQ@@._V1_FMjpg_UX1000_.jpg",
+    backdrop: "https://image.tmdb.org/t/p/w1280/xf815Zf1B874M4f8263884.jpg",
     synopsis: "Scientist Bruce Banner desperately seeks a cure for the gamma radiation that transformed him into the Hulk while hiding from General Ross.",
     infinityConnection: "Introduced the gamma-powered powerhouse who becomes a core Avenger in the fight against Thanos.",
     significance: "Established SHIELD's active tracking of enhanced individuals across the globe.",
+    boxOffice: "$264.8 Million",
+    tagline: "You'll like him when he's angry.",
     tags: ["Phase One", "Gamma", "SHIELD"]
   },
   {
@@ -50,11 +54,13 @@ export const infinitySagaMovies = [
     runtime: "124 min",
     director: "Jon Favreau",
     cast: ["Robert Downey Jr.", "Gwyneth Paltrow", "Don Cheadle", "Scarlett Johansson"],
-    poster: "https://image.tmdb.org/t/p/w500/6ssCwspYhL4G2W2W59X215c0m2q.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMTM0MDgwNjMyMl5BMl5BanBnXkFtZTcwNTg3NzAzMw@@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/6x8wS9A0k0kL0K.jpg",
     synopsis: "With the world now aware of his identity as Iron Man, Tony Stark must contend with declining health and a vengeful madman tied to his father's legacy.",
     infinityConnection: "First appearance of Natasha Romanoff (Black Widow) and introduction of Howard Stark's vibranium research.",
     significance: "Expanded SHIELD's role and established War Machine as a key ally.",
+    boxOffice: "$623.9 Million",
+    tagline: "It's not the armor. It's the man.",
     tags: ["Phase One", "Black Widow", "Vibranium"]
   },
   {
@@ -69,11 +75,13 @@ export const infinitySagaMovies = [
     runtime: "115 min",
     director: "Kenneth Branagh",
     cast: ["Chris Hemsworth", "Natalie Portman", "Tom Hiddleston", "Anthony Hopkins"],
-    poster: "https://image.tmdb.org/t/p/w500/prLX1824l4p97nK06GzC6N8W68.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BOGE4NzU1YTAtMTZlOS00YWJlLThiMDgtODg2M2EyNDUxNjRiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/3S8A0k0kL0K.jpg",
     synopsis: "The powerful but arrogant god Thor is cast out of Asgard to live among humans on Earth, where he learns true humility to reclaim his hammer Mjolnir.",
     infinityConnection: "Introduced cosmic realms, Loki as a central villain, and the Tesseract in the post-credits scene.",
     significance: "Brought cosmic lore and magic into the MCU hierarchy.",
+    boxOffice: "$449.3 Million",
+    tagline: "The courage to be a hero.",
     tags: ["Phase One", "Asgard", "Cosmic"]
   },
   {
@@ -88,11 +96,13 @@ export const infinitySagaMovies = [
     runtime: "124 min",
     director: "Joe Johnston",
     cast: ["Chris Evans", "Hayley Atwell", "Sebastian Stan", "Hugo Weaving"],
-    poster: "https://image.tmdb.org/t/p/w500/vSNxB2M0juRjpoPjKGGIjaGv26x.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMTYzOTc2NjgxOV5BMl5BanBnXkFtZTcwOTEyMT祖Mw@@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/yN8A0k0kL0K.jpg",
     synopsis: "Steve Rogers, a rejected military soldier, transforms into Captain America after taking a dose of Super-Soldier Serum to defeat Red Skull in WWII.",
     infinityConnection: "First full appearance of the Space Stone housed inside the Tesseract.",
     significance: "Established Steve Rogers' moral core and the origin of the Infinity Stones on Earth.",
+    boxOffice: "$370.6 Million",
+    tagline: "When patriots become heroes.",
     tags: ["Phase One", "Space Stone", "Super Soldier"]
   },
   {
@@ -107,11 +117,13 @@ export const infinitySagaMovies = [
     runtime: "143 min",
     director: "Joss Whedon",
     cast: ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo", "Chris Hemsworth", "Scarlett Johansson", "Jeremy Renner"],
-    poster: "https://image.tmdb.org/t/p/w500/RYMX2wcKSpAr243xcPhjZScvD4.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMTk2NTI1NjU4N15BMl5BanBnXkFtZTcwODg0OTY0NzE@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/9lA0k0kL0K.jpg",
     synopsis: "Earth's Mightiest Heroes must come together and learn to fight as a team if they are to stop Loki and his alien army from enslaving humanity.",
     infinityConnection: "First appearance of Thanos in the mid-credits scene. Reveals Loki's scepter holds the Mind Stone.",
     significance: "Unified Earth's heroes into the Avengers and teased the ultimate saga antagonist.",
+    boxOffice: "$1.519 Billion",
+    tagline: "Some assembly required.",
     tags: ["Phase One", "Mind Stone", "Thanos"]
   },
 
@@ -128,11 +140,13 @@ export const infinitySagaMovies = [
     runtime: "130 min",
     director: "Shane Black",
     cast: ["Robert Downey Jr.", "Gwyneth Paltrow", "Don Cheadle", "Guy Pearce"],
-    poster: "https://image.tmdb.org/t/p/w500/qhPtL1nHdJ3xvr2qRsy29J91kXZ.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMjE5MzcyNjk1M15BMl5BanBnXkFtZTcwMjQ4MjcxOQ@@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/1lA0k0kL0K.jpg",
     synopsis: "Tony Stark encounters a formidable terrorist named the Mandarin while dealing with severe PTSD from the Battle of New York.",
     infinityConnection: "Explores the psychological aftermath of the Battle of New York on Earth's protector.",
     significance: "Kicked off Phase Two with Stark's realization that cosmic threats require greater preparation.",
+    boxOffice: "$1.215 Billion",
+    tagline: "Unleash the power behind the armor.",
     tags: ["Phase Two", "PTSD", "Armors"]
   },
   {
@@ -147,11 +161,13 @@ export const infinitySagaMovies = [
     runtime: "112 min",
     director: "Alan Taylor",
     cast: ["Chris Hemsworth", "Natalie Portman", "Tom Hiddleston", "Christopher Eccleston"],
-    poster: "https://image.tmdb.org/t/p/w500/wp6OxE422jhsqF46W6kQeS23w4V.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMTQyNzAwOTUxOF5BMl5BanBnXkFtZTcwMTE0OTc5OQ@@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/2lA0k0kL0K.jpg",
     synopsis: "Thor teams up with Loki to save Nine Realms from the Dark Elves, led by Malekith, who intends to plunge the universe into darkness.",
     infinityConnection: "Introduced the Reality Stone in liquid form as the Aether, later delivered to The Collector.",
     significance: "Directly revealed that the Infinity Stones were being collected across the galaxy.",
+    boxOffice: "$644.8 Million",
+    tagline: "Delve into the darkness.",
     tags: ["Phase Two", "Reality Stone", "Aether"]
   },
   {
@@ -166,11 +182,13 @@ export const infinitySagaMovies = [
     runtime: "136 min",
     director: "Anthony and Joe Russo",
     cast: ["Chris Evans", "Scarlett Johansson", "Sebastian Stan", "Anthony Mackie"],
-    poster: "https://image.tmdb.org/t/p/w500/tVFRwF3WB5rm9vh96pRgXxV2Wws.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMzA2NDkwMDMyNV5BMl5BanBnXkFtZTgwODA5MTM5MDE@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/3lA0k0kL0K.jpg",
     synopsis: "As Steve Rogers struggles to embrace his role in the modern world, he teams up with Black Widow to battle a mysterious assassin known as the Winter Soldier.",
     infinityConnection: "Destruction of SHIELD after HYDRA infiltration leads to Loki's scepter falling into Baron Strucker's hands.",
     significance: "Established the Russo Brothers' grounded, high-stakes cinematic direction for MCU's climax.",
+    boxOffice: "$714.4 Million",
+    tagline: "In heroes we trust. In power we fear.",
     tags: ["Phase Two", "HYDRA", "Winter Soldier"]
   },
   {
@@ -185,11 +203,13 @@ export const infinitySagaMovies = [
     runtime: "121 min",
     director: "James Gunn",
     cast: ["Chris Pratt", "Zoe Saldana", "Dave Bautista", "Vin Diesel", "Bradley Cooper"],
-    poster: "https://image.tmdb.org/t/p/w500/r7vmZjiyFjuhWvZ2K23T2Tzuvwo.jpg",
-    backdrop: "https://image.tmdb.org/t/p/w1280/4lA0k0kL0K.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMTAwMjU5OTgxNjZeQTJeQWpwZ15BbWU4MDUxNDYxODEx._V1_FMjpg_UX1000_.jpg",
+    backdrop: "https://image.tmdb.org/t/p/w1280/uLtVGaFiKMbwAUiSyjBZJRLBd2e.jpg",
     synopsis: "A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe using an ancient orb.",
     infinityConnection: "First deep lore explanation of all 6 Infinity Stones by The Collector and introduction of the Power Stone.",
     significance: "Introduced Gamora and Nebula, Thanos' daughters, and established cosmic stakes.",
+    boxOffice: "$773.3 Million",
+    tagline: "You're welcome.",
     tags: ["Phase Two", "Power Stone", "Cosmic"]
   },
   {
@@ -204,11 +224,13 @@ export const infinitySagaMovies = [
     runtime: "141 min",
     director: "Joss Whedon",
     cast: ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo", "Chris Hemsworth", "Scarlett Johansson", "Elizabeth Olsen"],
-    poster: "https://image.tmdb.org/t/p/w500/4ssDSp2wL2y20I0J2o92aFjJ.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/5lA0k0kL0K.jpg",
     synopsis: "When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong.",
     infinityConnection: "Mind Stone extracted from Loki's scepter to create Vision. Thor sees a vision of the Infinity Gauntlet.",
     significance: "Thanos retrieves the Infinity Gauntlet personally in the mid-credits scene, declaring 'I'll do it myself.'",
+    boxOffice: "$1.405 Billion",
+    tagline: "A new age begins.",
     tags: ["Phase Two", "Mind Stone", "Vision"]
   },
   {
@@ -223,11 +245,13 @@ export const infinitySagaMovies = [
     runtime: "117 min",
     director: "Peyton Reed",
     cast: ["Paul Rudd", "Evangeline Lilly", "Corey Stoll", "Michael Douglas"],
-    poster: "https://image.tmdb.org/t/p/w500/jgnvuEsdHj9T6J8T5E2w8WkH0W.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMjM2Njg5NzA4Ml5BMl5BanBnXkFtZTgwMDgxMDgzNTE@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/6lA0k0kL0K.jpg",
     synopsis: "Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero.",
     infinityConnection: "Introduced the Quantum Realm, which later provides the key mechanism for the Time Heist in Endgame.",
     significance: "Concluded Phase Two and laid the groundwork for time travel via subatomic physics.",
+    boxOffice: "$519.3 Million",
+    tagline: "Heroes don't get any bigger.",
     tags: ["Phase Two", "Quantum Realm", "Pym Tech"]
   },
 
@@ -244,11 +268,13 @@ export const infinitySagaMovies = [
     runtime: "147 min",
     director: "Anthony and Joe Russo",
     cast: ["Chris Evans", "Robert Downey Jr.", "Scarlett Johansson", "Sebastian Stan", "Chadwick Boseman", "Tom Holland"],
-    poster: "https://image.tmdb.org/t/p/w500/rAGi1ZflB62xsVwQ2hKJY99v9yO.jpg",
-    backdrop: "https://image.tmdb.org/t/p/w1280/7lA0k0kL0K.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMjQ0MTgyNjAxMV5BMl5BanBnXkFtZTgwNjUzMDkyODE@._V1_FMjpg_UX1000_.jpg",
+    backdrop: "https://image.tmdb.org/t/p/w1280/m5OOIjvPLYrPO92yL0938y0.jpg",
     synopsis: "Political involvement in the Avengers' affairs causes a rift between Captain America and Iron Man, fracturing Earth's defenders.",
     infinityConnection: "Fractured the Avengers right before Thanos' assault, leaving Earth vulnerable and divided.",
     significance: "Introduced Black Panther and Spider-Man to the MCU.",
+    boxOffice: "$1.153 Billion",
+    tagline: "Divided we fall.",
     tags: ["Phase Three", "Divided", "Sokovia Accords"]
   },
   {
@@ -263,11 +289,13 @@ export const infinitySagaMovies = [
     runtime: "115 min",
     director: "Scott Derrickson",
     cast: ["Benedict Cumberbatch", "Chiwetel Ejiofor", "Rachel McAdams", "Benedict Wong", "Mads Mikkelsen", "Tilda Swinton"],
-    poster: "https://image.tmdb.org/t/p/w500/uGBV1uUQGSpB83jO2cE0099v7f.jpg",
-    backdrop: "https://image.tmdb.org/t/p/w1280/8lA0k0kL0K.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BNjgwNzAzNjk1Nl5BMl5BanBnXkFtZTgwMzQ2NjI1OTE@._V1_FMjpg_UX1000_.jpg",
+    backdrop: "https://image.tmdb.org/t/p/w1280/aL53wGWP1f6Z2w92837.jpg",
     synopsis: "After a tragic car crash ends his neurosurgery career, Dr. Stephen Strange discovers the mystic arts and hidden dimensions.",
     infinityConnection: "Introduced the Time Stone housed within the Eye of Agamotto.",
     significance: "Established temporal magic and Strange's duty to safeguard reality.",
+    boxOffice: "$677.8 Million",
+    tagline: "Open your mind. Change your reality.",
     tags: ["Phase Three", "Time Stone", "Mystic Arts"]
   },
   {
@@ -282,11 +310,13 @@ export const infinitySagaMovies = [
     runtime: "136 min",
     director: "James Gunn",
     cast: ["Chris Pratt", "Zoe Saldana", "Dave Bautista", "Vin Diesel", "Bradley Cooper", "Kurt Russell"],
-    poster: "https://image.tmdb.org/t/p/w500/y4MBq2VJGo1L6P2y19jZ.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BNjM0NTc0MTgwOV5BMl5BanBnXkFtZTgwNDgyNzkyMTI@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/9lA0k0kL0K.jpg",
     synopsis: "The Guardians struggle to keep together as a family while unraveling the mystery of Peter Quill's true celestial parentage.",
     infinityConnection: "Deepened Gamora and Nebula's backstory regarding Thanos' abusive upbringing.",
     significance: "Solidified the Guardians' bonds right before their tragic encounter with Thanos.",
+    boxOffice: "$863.8 Million",
+    tagline: "Obviously.",
     tags: ["Phase Three", "Celestial", "Family"]
   },
   {
@@ -301,11 +331,13 @@ export const infinitySagaMovies = [
     runtime: "133 min",
     director: "Jon Watts",
     cast: ["Tom Holland", "Michael Keaton", "Robert Downey Jr.", "Marisa Tomei", "Zendaya"],
-    poster: "https://image.tmdb.org/t/p/w500/c24sv2weTHPsmDa7jE2bStawP.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BNTk4ODQ1MzgzNl5BMl5BanBnXkFtZTgwMTMyMzM4MTI@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/10lA0k0kL0K.jpg",
     synopsis: "Peter Parker balances his life as an ordinary high school student in Queens with his superhero alter-ego Spider-Man under Tony Stark's mentorship.",
     infinityConnection: "Establishes Tony Stark's fatherly mentorship of Peter, heightening the emotion of Infinity War.",
     significance: "Integrated Spider-Man fully into the MCU narrative ecosystem.",
+    boxOffice: "$880.2 Million",
+    tagline: "Homework can wait. The city can't.",
     tags: ["Phase Three", "Spider-Man", "Stark Tech"]
   },
   {
@@ -320,11 +352,13 @@ export const infinitySagaMovies = [
     runtime: "130 min",
     director: "Taika Waititi",
     cast: ["Chris Hemsworth", "Tom Hiddleston", "Cate Blanchett", "Idris Elba", "Jeff Goldblum", "Mark Ruffalo"],
-    poster: "https://image.tmdb.org/t/p/w500/rzRwT225W9p0w25W9z29r32092f.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/11lA0k0kL0K.jpg",
     synopsis: "Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Hela, the goddess of death, from destroying his home world.",
     infinityConnection: "Destruction of Asgard and Loki taking the Tesseract directly sets up the opening scene of Infinity War.",
     significance: "Lead-in directly to Thanos' warship intercepting the Asgardian refugees.",
+    boxOffice: "$854.0 Million",
+    tagline: "No hammer. No problem.",
     tags: ["Phase Three", "Tesseract", "Asgard Fall"]
   },
   {
@@ -339,11 +373,13 @@ export const infinitySagaMovies = [
     runtime: "134 min",
     director: "Ryan Coogler",
     cast: ["Chadwick Boseman", "Michael B. Jordan", "Lupita Nyong'o", "Danai Gurira", "Letitia Wright"],
-    poster: "https://image.tmdb.org/t/p/w500/uxzz2A2NTXiE2892398239023.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjTYMl5BMl5BanBnXkFtZTgwMTg2MTM1NDM@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/12lA0k0kL0K.jpg",
     synopsis: "T'Challa returns home to the isolated, technologically advanced African nation of Wakanda to serve as king, but finds his sovereignty challenged.",
     infinityConnection: "Opens Wakanda's borders and vibranium defenses, which become the battleground for the Mind Stone defense.",
     significance: "Cultural milestone that prepared the stage for the climax of Infinity War.",
+    boxOffice: "$1.347 Billion",
+    tagline: "Long live the king.",
     tags: ["Phase Three", "Wakanda", "Vibranium"]
   },
   {
@@ -358,11 +394,13 @@ export const infinitySagaMovies = [
     runtime: "149 min",
     director: "Anthony and Joe Russo",
     cast: ["Robert Downey Jr.", "Chris Hemsworth", "Mark Ruffalo", "Chris Evans", "Scarlett Johansson", "Josh Brolin"],
-    poster: "https://image.tmdb.org/t/p/w500/7WsyChLLEzFiDiLzBvYkX3vR2h0.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/13lA0k0kL0K.jpg",
     synopsis: "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation ends the universe.",
     infinityConnection: "Thanos collects all 6 Infinity Stones and executes 'The Snap', wiping out half of all life in the universe.",
     significance: "The darkest chapter of the MCU and the ultimate culmination of 10 years of storytelling.",
+    boxOffice: "$2.048 Billion",
+    tagline: "An entire universe. Once decision.",
     tags: ["Phase Three", "The Snap", "Infinity Gauntlet"]
   },
   {
@@ -377,11 +415,13 @@ export const infinitySagaMovies = [
     runtime: "118 min",
     director: "Peyton Reed",
     cast: ["Paul Rudd", "Evangeline Lilly", "Michael Peña", "Walton Goggins", "Michael Douglas", "Michelle Pfeiffer"],
-    poster: "https://image.tmdb.org/t/p/w500/5vH26bQz3R3.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BYjcyYTk0N2YtWjkxDC00YWVlLWIwZmItOGM1ZmJhZDZlYWExXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/14lA0k0kL0K.jpg",
     synopsis: "As Scott Lang balances being a superhero and a father, Hope van Dyne and Dr. Hank Pym present an urgent new mission to rescue Janet from the Quantum Realm.",
     infinityConnection: "Scott Lang is trapped in the Quantum Realm during Thanos' snap, preserving him to pitch time travel in Endgame.",
     significance: "Crucial bridge that unlocked the physics necessary to reverse the Decimation.",
+    boxOffice: "$622.7 Million",
+    tagline: "Real heroes. Not actual size.",
     tags: ["Phase Three", "Quantum Realm", "Post-Snap"]
   },
   {
@@ -396,11 +436,13 @@ export const infinitySagaMovies = [
     runtime: "124 min",
     director: "Anna Boden and Ryan Fleck",
     cast: ["Brie Larson", "Samuel L. Jackson", "Ben Mendelsohn", "Djimon Hounsou", "Jude Law"],
-    poster: "https://image.tmdb.org/t/p/w500/A2LicfK3L2k4.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/15lA0k0kL0K.jpg",
     synopsis: "Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.",
     infinityConnection: "Reveals Carol's powers derive from the Tesseract (Space Stone) and explains Nick Fury's pager in Infinity War.",
     significance: "Introduced Earth's cosmic heavy-hitter summoned to rescue the surviving Avengers.",
+    boxOffice: "$1.128 Billion",
+    tagline: "Higher. Further. Faster.",
     tags: ["Phase Three", "Space Stone", "Cosmic Hero"]
   },
   {
@@ -415,11 +457,13 @@ export const infinitySagaMovies = [
     runtime: "181 min",
     director: "Anthony and Joe Russo",
     cast: ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo", "Chris Hemsworth", "Scarlett Johansson", "Jeremy Renner"],
-    poster: "https://image.tmdb.org/t/p/w500/or06fU8dGSPjB6nF.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/16lA0k0kL0K.jpg",
     synopsis: "After the devastating events of Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more to reverse Thanos' actions.",
     infinityConnection: "The Time Heist retrieves the 6 Infinity Stones across past timelines, climaxing in Tony Stark's snap.",
     significance: "The definitive grand finale of The Infinity Saga and Tony Stark's heroic sacrifice.",
+    boxOffice: "$2.798 Billion",
+    tagline: "Part of the journey is the end.",
     tags: ["Phase Three", "Time Heist", "Endgame"]
   },
   {
@@ -434,11 +478,13 @@ export const infinitySagaMovies = [
     runtime: "129 min",
     director: "Jon Watts",
     cast: ["Tom Holland", "Samuel L. Jackson", "Zendaya", "Cobie Smulders", "Jake Gyllenhaal"],
-    poster: "https://image.tmdb.org/t/p/w500/4D0Pp2.jpg",
+    poster: "https://m.media-amazon.com/images/M/MV5BMGZlNTY1ZDctNGJiYi00OTQwLWE4NmUtMDliYTUzNjk2ZDZjXkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_FMjpg_UX1000_.jpg",
     backdrop: "https://image.tmdb.org/t/p/w1280/17lA0k0kL0K.jpg",
     synopsis: "Following the events of Endgame, Spider-Man must step up to take on new threats in a world that has changed forever.",
     infinityConnection: "Deals with the global fallout of the Blip and Iron Man's legacy.",
     significance: "The official epilogue to The Infinity Saga.",
+    boxOffice: "$1.132 Billion",
+    tagline: "It's time to step up.",
     tags: ["Phase Three", "Epilogue", "Iron Man Legacy"]
   }
 ];
