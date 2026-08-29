@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './index.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -23,6 +23,28 @@ document.head.appendChild(materialSymbolsLink);
 function App() {
   const [trailerOpen, setTrailerOpen] = useState(false);
   const [introOpen, setIntroOpen] = useState(true);
+  const [activePage, setActivePage] = useState(() => {
+    return window.location.hash === '#infinity-saga' ? 'infinity-saga' : 'doomsday';
+  });
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash === '#infinity-saga') {
+        setActivePage('infinity-saga');
+      } else {
+        setActivePage('doomsday');
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const navigateTo = (pageName) => {
+    setActivePage(pageName);
+    window.location.hash = pageName === 'infinity-saga' ? '#infinity-saga' : '#doomsday';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const openTrailer = () => setTrailerOpen(true);
   const closeTrailer = () => setTrailerOpen(false);
@@ -34,22 +56,33 @@ function App() {
   return (
     <>
       {introOpen && <MarvelIntro onDismiss={() => setIntroOpen(false)} />}
-      <Navbar onWatchTrailer={openTrailer} />
+      <Navbar
+        onWatchTrailer={openTrailer}
+        activePage={activePage}
+        onNavigate={navigateTo}
+      />
 
       <main>
-        <div id="hero">
-          <Hero onWatchTrailer={openTrailer} onExploreCast={scrollToCast} />
-        </div>
-
-        <InfinityHero />
-        <InfinityTimeline />
-
-        <Countdown />
-        <DoctorSection />
-        <CastSection />
-        <Timeline />
-        <MediaSection onWatchTrailer={openTrailer} />
-        <InfinityFooter />
+        {activePage === 'infinity-saga' ? (
+          /* SEPARATE PAGE: THE INFINITY SAGA */
+          <div className="infinity-saga-page fade-in-up">
+            <InfinityHero />
+            <InfinityTimeline />
+            <InfinityFooter />
+          </div>
+        ) : (
+          /* MAIN PAGE: DOOMSDAY */
+          <div className="doomsday-main-page fade-in-up">
+            <div id="hero">
+              <Hero onWatchTrailer={openTrailer} onExploreCast={scrollToCast} />
+            </div>
+            <Countdown />
+            <DoctorSection />
+            <CastSection />
+            <Timeline onNavigateSaga={navigateTo} />
+            <MediaSection onWatchTrailer={openTrailer} />
+          </div>
+        )}
       </main>
 
       <Footer />
@@ -59,4 +92,5 @@ function App() {
 }
 
 export default App;
+
 

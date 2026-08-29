@@ -36,7 +36,7 @@ const TIMELINE = [
   },
 ];
 
-export default function Timeline() {
+export default function Timeline({ onNavigateSaga }) {
   const sectionRef = useRef(null);
   const [visible, setVisible] = useState(false);
 
@@ -51,9 +51,11 @@ export default function Timeline() {
 
   const handleCardClick = (id) => {
     if (id === 'infinity') {
-      const el = document.getElementById('infinity-saga');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+      if (onNavigateSaga) {
+        onNavigateSaga('infinity-saga');
+      } else {
+        const el = document.getElementById('infinity-saga');
+        el?.scrollIntoView({ behavior: 'smooth' });
       }
     }
   };
@@ -86,7 +88,7 @@ export default function Timeline() {
                   {item.interactive && (
                     <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
                       <span style={{ fontSize: '11px', fontWeight: 800, letterSpacing: '0.15em', color: 'var(--primary-fixed)' }}>
-                        EXPLORE ARCHIVE →
+                        OPEN SEPARATE PAGE →
                       </span>
                     </div>
                   )}
@@ -103,4 +105,5 @@ export default function Timeline() {
     </section>
   );
 }
+
 

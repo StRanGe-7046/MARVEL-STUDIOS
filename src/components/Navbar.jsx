@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 
-export default function Navbar({ onWatchTrailer }) {
+export default function Navbar({ onWatchTrailer, activePage, onNavigate }) {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('infinity');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -10,43 +9,70 @@ export default function Navbar({ onWatchTrailer }) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const navItems = [
-    { label: 'DOOMSDAY', targetId: 'hero' },
-    { label: 'INFINITY SAGA', targetId: 'infinity-saga' },
-    { label: 'PHASES', targetId: 'phase-1' },
-    { label: 'MOVIES', targetId: 'movie-1' },
-  ];
-
-  const handleNavClick = (e, targetId) => {
+  const handleLinkClick = (e, target) => {
     e.preventDefault();
-    const el = document.getElementById(targetId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(targetId);
+    if (target === 'doomsday' || target === 'infinity-saga') {
+      if (onNavigate) onNavigate(target);
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const el = document.getElementById(target);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
   return (
     <nav className={`nav-bar${scrolled ? ' scrolled' : ''}`}>
       <div className="nav-inner">
-        <div className="nav-logo" onClick={(e) => handleNavClick(e, 'hero')}>
+        <div className="nav-logo" onClick={(e) => handleLinkClick(e, 'doomsday')}>
           AVENGERS: DOOMSDAY
         </div>
+
         <ul className="nav-links">
-          {navItems.map((item) => (
-            <li key={item.label}>
-              <a
-                href={`#${item.targetId}`}
-                className={activeSection === item.targetId ? 'active' : ''}
-                onClick={(e) => handleNavClick(e, item.targetId)}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
+          {activePage === 'infinity-saga' ? (
+            <>
+              <li>
+                <a href="#doomsday" onClick={(e) => handleLinkClick(e, 'doomsday')} style={{ color: 'var(--primary-fixed)' }}>
+                  ← BACK TO DOOMSDAY
+                </a>
+              </li>
+              <li>
+                <a href="#infinity-saga" className="active">
+                  INFINITY SAGA
+                </a>
+              </li>
+              <li>
+                <a href="#phase-1" onClick={(e) => handleLinkClick(e, 'phase-1')}>
+                  PHASES
+                </a>
+              </li>
+              <li>
+                <a href="#movie-1" onClick={(e) => handleLinkClick(e, 'movie-1')}>
+                  MOVIES
+                </a>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <a href="#hero" className="active" onClick={(e) => handleLinkClick(e, 'hero')}>
+                  DOOMSDAY
+                </a>
+              </li>
+              <li>
+                <a href="#infinity-saga" onClick={(e) => handleLinkClick(e, 'infinity-saga')}>
+                  INFINITY SAGA PAGE
+                </a>
+              </li>
+              <li>
+                <a href="#cast" onClick={(e) => handleLinkClick(e, 'cast')}>
+                  CAST
+                </a>
+              </li>
+            </>
+          )}
         </ul>
+
         {onWatchTrailer && (
           <button className="nav-btn" onClick={onWatchTrailer} id="nav-watch-trailer">
             Watch Trailer
@@ -56,4 +82,5 @@ export default function Navbar({ onWatchTrailer }) {
     </nav>
   );
 }
+
 
