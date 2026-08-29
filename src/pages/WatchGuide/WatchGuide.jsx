@@ -1,16 +1,16 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { infinitySagaMovies } from '../../data/infinitySaga';
-import { getWatchGuide } from '../../utils/watchGuide';
+import { getMinimumWatchPath } from '../../utils/watchGuide';
 import MovieModal from '../../components/InfinityTimeline/MovieModal';
 
 export default function WatchGuide({ onNavigate }) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedMovieId, setSelectedMovieId] = useState(22); // Default to Avengers: Endgame (22)
+  const [selectedMovieId, setSelectedMovieId] = useState(22); // Default to Avengers: Endgame
   const [activeModalMovie, setActiveModalMovie] = useState(null);
   const [notFound, setNotFound] = useState(false);
 
-  // Filter movies for search dropdown
+  // Suggestions for autocomplete search dropdown
   const suggestions = useMemo(() => {
     if (!searchTerm.trim()) return [];
     const q = searchTerm.toLowerCase();
@@ -23,7 +23,7 @@ export default function WatchGuide({ onNavigate }) {
   }, [searchTerm]);
 
   const watchData = useMemo(() => {
-    return getWatchGuide(selectedMovieId);
+    return getMinimumWatchPath(selectedMovieId);
   }, [selectedMovieId]);
 
   const handleSelectMovie = (movie) => {
@@ -43,9 +43,9 @@ export default function WatchGuide({ onNavigate }) {
     }
   };
 
-  const startJourney = () => {
-    if (watchData && watchData.mustWatchMovies.length > 0) {
-      setActiveModalMovie(watchData.mustWatchMovies[0]);
+  const handleStartWatching = () => {
+    if (watchData && watchData.prerequisites.length > 0) {
+      setActiveModalMovie(watchData.prerequisites[0].movie);
     } else if (watchData) {
       setActiveModalMovie(watchData.targetMovie);
     }
@@ -53,23 +53,24 @@ export default function WatchGuide({ onNavigate }) {
 
   return (
     <div className="watch-guide-page fade-in-up">
-      {/* Search Header Hero */}
+      {/* Hero Header */}
       <section className="watch-hero-section">
         <div className="watch-hero-content">
-          <span className="watch-eyebrow">[MCU_PREREQUISITE_LOG]</span>
+          <span className="watch-eyebrow">[SHORTCUT_THROUGH_MCU]</span>
           <h1 className="watch-title">MCU WATCH GUIDE</h1>
+          <h2 className="watch-subhead-headline">WHAT DO I ACTUALLY NEED TO WATCH?</h2>
           <p className="watch-subtitle">
-            Which movies do you actually need to watch before this one?
+            Enter a movie. We'll give you the absolute minimum story path.
           </p>
 
-          {/* Search Input Box */}
+          {/* Minimal Search Input */}
           <form className="watch-search-form" onSubmit={handleSearchSubmit}>
             <div className="search-input-wrapper glass-card">
               <span className="search-icon">🔍</span>
               <input
                 type="text"
                 className="search-input"
-                placeholder="Search an Infinity Saga movie (e.g. Avengers, Endgame)..."
+                placeholder="Search an Infinity Saga movie..."
                 value={searchTerm}
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
@@ -86,11 +87,11 @@ export default function WatchGuide({ onNavigate }) {
                 </button>
               )}
               <button type="submit" className="search-submit-btn">
-                FIND WATCH PATH →
+                FIND MY WATCH PATH →
               </button>
             </div>
 
-            {/* Suggestions Dropdown */}
+            {/* Suggestions List */}
             {suggestions.length > 0 && (
               <ul className="search-suggestions-dropdown glass-card">
                 {suggestions.map((movie) => (
@@ -108,7 +109,7 @@ export default function WatchGuide({ onNavigate }) {
             )}
           </form>
 
-          {/* Not Found Alert */}
+          {/* Clean Error Message */}
           {notFound && (
             <motion.div
               className="movie-not-found-alert glass-card"
@@ -116,36 +117,34 @@ export default function WatchGuide({ onNavigate }) {
               animate={{ opacity: 1, y: 0 }}
             >
               <strong>MOVIE NOT FOUND</strong>
-              <p>Choose one of the 23 Infinity Saga films from Phase One through Phase Three.</p>
+              <p>Choose one of the 23 Infinity Saga films.</p>
             </motion.div>
           )}
         </div>
       </section>
 
-      {/* Watch Guide Result Section */}
+      {/* Result Experience Section */}
       {watchData && (
         <section className="watch-result-section">
           <div className="watch-result-inner">
-            {/* Header Title */}
+            {/* Result Header */}
             <div className="result-header">
               <span className="result-tag">[BEFORE_YOU_WATCH]</span>
               <h2 className="target-movie-title">{watchData.targetMovie.title}</h2>
-              <p className="result-tagline">
-                To fully understand this movie, these are the essential films you should watch first.
-              </p>
-              <div className="result-badge-row">
+              <div className="required-badge-container">
                 <span className="required-count-badge">
-                  {watchData.totalMustWatch} FILMS REQUIRED
-                </span>
-                <span className="runtime-badge">
-                  Estimated Journey: ~{watchData.mustWatchHours} HOURS
+                  {watchData.count === 0
+                    ? 'NO PREVIOUS MOVIES REQUIRED'
+                    : watchData.count === 1
+                    ? '1 MOVIE REQUIRED'
+                    : `${watchData.count} MOVIES REQUIRED`}
                 </span>
               </div>
             </div>
 
-            {/* Sequential Watch Path */}
+            {/* Visual Watch Path Centerpiece */}
             <div className="watch-path-container glass-card">
-              <h3 className="watch-path-title">SEQUENTIAL STORY PATH</h3>
+              <h3 className="watch-path-title">MINIMUM STORY PATH</h3>
               <div className="watch-path-flow">
                 {watchData.watchPath.map((item, index) => {
                   const isTarget = item.id === watchData.targetMovie.id;
@@ -155,7 +154,7 @@ export default function WatchGuide({ onNavigate }) {
                         className={`watch-path-step ${isTarget ? 'target-step' : ''}`}
                         onClick={() => setActiveModalMovie(item)}
                       >
-                        <span className="step-num">#{item.number}</span>
+                        <span className="node-icon">{isTarget ? '◉' : '●'}</span>
                         <span className="step-name">{item.title}</span>
                       </div>
                       {index < watchData.watchPath.length - 1 && (
@@ -167,81 +166,52 @@ export default function WatchGuide({ onNavigate }) {
               </div>
             </div>
 
-            {/* Must Watch Movies Grid */}
-            <div className="watch-category-block">
-              <div className="category-header">
-                <h3 className="category-title">MUST WATCH</h3>
-                <span className="category-subtitle">Essential for understanding plot, characters, and stones</span>
+            {/* Essential Prerequisite Cards */}
+            {watchData.prerequisites.length > 0 ? (
+              <div className="watch-prereq-block">
+                <h3 className="prereq-section-title">ESSENTIAL PREREQUISITES</h3>
+                <div className="prereq-card-grid">
+                  {watchData.prerequisites.map(({ movie, why }) => (
+                    <div
+                      key={movie.id}
+                      className="prereq-card glass-card"
+                      onClick={() => setActiveModalMovie(movie)}
+                    >
+                      <div className="prereq-poster-wrap">
+                        <img src={movie.poster} alt={movie.title} className="prereq-poster-img" />
+                        <span className="prereq-num-badge">#{movie.number}</span>
+                      </div>
+                      <div className="prereq-card-body">
+                        <h4 className="prereq-movie-title">{movie.title}</h4>
+                        <span className="prereq-meta">{movie.releaseYear} · {movie.phase}</span>
+                        <div className="prereq-why-box">
+                          <span className="why-label">WHY?</span>
+                          <p className="why-text">{why}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-
-              {watchData.mustWatchMovies.length > 0 ? (
-                <div className="compact-movie-grid">
-                  {watchData.mustWatchMovies.map((movie) => (
-                    <div
-                      key={movie.id}
-                      className="compact-movie-card glass-card"
-                      onClick={() => setActiveModalMovie(movie)}
-                    >
-                      <div className="compact-poster-wrap">
-                        <img src={movie.poster} alt={movie.title} className="compact-poster-img" />
-                        <span className="compact-tag must-tag">Essential</span>
-                      </div>
-                      <div className="compact-card-body">
-                        <span className="compact-num">#{movie.number}</span>
-                        <h4 className="compact-title">{movie.title}</h4>
-                        <span className="compact-meta">{movie.phase} · {movie.releaseYear}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="no-prereq-box glass-card">
-                  <p>✨ This is the first movie in the saga! No prior watching required.</p>
-                </div>
-              )}
-            </div>
-
-            {/* Optional Movies Grid */}
-            {watchData.optionalMovies.length > 0 && (
-              <div className="watch-category-block">
-                <div className="category-header">
-                  <h3 className="category-title optional-title">OPTIONAL</h3>
-                  <span className="category-subtitle">Useful additional context and backstory</span>
-                </div>
-
-                <div className="compact-movie-grid">
-                  {watchData.optionalMovies.map((movie) => (
-                    <div
-                      key={movie.id}
-                      className="compact-movie-card glass-card"
-                      onClick={() => setActiveModalMovie(movie)}
-                    >
-                      <div className="compact-poster-wrap">
-                        <img src={movie.poster} alt={movie.title} className="compact-poster-img" />
-                        <span className="compact-tag optional-tag">Optional</span>
-                      </div>
-                      <div className="compact-card-body">
-                        <span className="compact-num">#{movie.number}</span>
-                        <h4 className="compact-title">{movie.title}</h4>
-                        <span className="compact-meta">{movie.phase} · {movie.releaseYear}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+            ) : (
+              <div className="no-prereq-box glass-card">
+                <p>You can watch <strong>{watchData.targetMovie.title}</strong> directly without watching any previous films.</p>
               </div>
             )}
 
-            {/* Action Bar at Bottom */}
-            <div className="start-journey-row">
-              <button className="start-journey-btn glass-card" onClick={startJourney}>
-                START WATCH JOURNEY →
+            {/* Simple Ready CTA */}
+            <div className="ready-cta-container">
+              <span className="ready-tag">YOU'RE READY FOR</span>
+              <h3 className="ready-target-title">{watchData.targetMovie.title}</h3>
+              <button className="start-watching-btn glass-card" onClick={handleStartWatching}>
+                START WATCHING →
               </button>
             </div>
           </div>
         </section>
       )}
 
-      {/* Reuse Movie Modal */}
+      {/* Reusable Movie Modal */}
       <MovieModal
         movie={activeModalMovie}
         isOpen={!!activeModalMovie}

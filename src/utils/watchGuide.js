@@ -1,75 +1,181 @@
 import { infinitySagaMovies } from '../data/infinitySaga';
 
 /**
- * Watch Guide Mappings for all 23 MCU Infinity Saga Movies.
- * Maps target movieId -> { mustWatch: [id...], optional: [id...] }
+ * Aggressively minimal prerequisite mappings for all 23 MCU Infinity Saga movies.
+ * Each entry maps target movieId -> {
+ *   minimum: [array of essential prerequisite movie IDs],
+ *   why: { [movieId]: "One short sentence why this movie is essential" }
+ * }
  */
-export const watchGuideMappings = {
-  1: { mustWatch: [], optional: [] },
-  2: { mustWatch: [], optional: [1] },
-  3: { mustWatch: [1], optional: [2] },
-  4: { mustWatch: [1], optional: [3] },
-  5: { mustWatch: [1], optional: [4] },
-  6: { mustWatch: [1, 4, 5], optional: [2, 3] },
-  7: { mustWatch: [1, 6], optional: [3] },
-  8: { mustWatch: [4, 6], optional: [1] },
-  9: { mustWatch: [5, 6], optional: [3] },
-  10: { mustWatch: [6], optional: [] },
-  11: { mustWatch: [1, 6, 9], optional: [4, 8] },
-  12: { mustWatch: [6, 11], optional: [1] },
-  13: { mustWatch: [1, 5, 6, 9, 11], optional: [3, 10, 12] },
-  14: { mustWatch: [6], optional: [11] },
-  15: { mustWatch: [10], optional: [] },
-  16: { mustWatch: [6, 13], optional: [1] },
-  17: { mustWatch: [4, 6, 8, 11], optional: [15] },
-  18: { mustWatch: [13], optional: [11] },
-  19: { mustWatch: [1, 6, 10, 11, 13, 14, 17], optional: [4, 5, 8, 15, 18] },
-  20: { mustWatch: [12, 13], optional: [19] },
-  21: { mustWatch: [6, 19], optional: [1, 5] },
-  22: { mustWatch: [1, 6, 9, 11, 13, 14, 17, 19], optional: [4, 5, 10, 12, 20, 21] },
-  23: { mustWatch: [6, 13, 16, 19, 22], optional: [1] },
+export const minimalWatchMappings = {
+  1: {
+    minimum: [],
+    why: {},
+    message: "NO PREVIOUS MOVIES REQUIRED. You can watch Iron Man directly as the origin of the MCU."
+  },
+  2: {
+    minimum: [],
+    why: {},
+    message: "NO PREVIOUS MOVIES REQUIRED. You can watch Bruce Banner's story directly."
+  },
+  3: {
+    minimum: [1],
+    why: {
+      1: "Establishes Tony Stark as Iron Man and his public identity."
+    }
+  },
+  4: {
+    minimum: [],
+    why: {},
+    message: "NO PREVIOUS MOVIES REQUIRED. Introduces Asgard and Thor directly."
+  },
+  5: {
+    minimum: [],
+    why: {},
+    message: "NO PREVIOUS MOVIES REQUIRED. Steve Rogers' standalone origin in World War II."
+  },
+  6: {
+    minimum: [1, 4, 5],
+    why: {
+      1: "Introduces Iron Man, the core anchor of the team.",
+      4: "Introduces Thor and Loki, the main antagonist.",
+      5: "Introduces Captain America and the Space Stone (Tesseract)."
+    }
+  },
+  7: {
+    minimum: [6],
+    why: {
+      6: "Establishes the Battle of New York that causes Tony Stark's anxiety."
+    }
+  },
+  8: {
+    minimum: [6],
+    why: {
+      6: "Explains Loki's imprisonment in Asgard following the New York invasion."
+    }
+  },
+  9: {
+    minimum: [5, 6],
+    why: {
+      5: "Establishes Steve Rogers and his bond with Bucky Barnes.",
+      6: "Shows Cap working as an active operative for S.H.I.E.L.D."
+    }
+  },
+  10: {
+    minimum: [],
+    why: {},
+    message: "NO PREVIOUS MOVIES REQUIRED. Standalone introduction to the cosmic Guardians."
+  },
+  11: {
+    minimum: [6],
+    why: {
+      6: "Establishes the original Avengers team dynamic and Loki's scepter."
+    }
+  },
+  12: {
+    minimum: [],
+    why: {},
+    message: "NO PREVIOUS MOVIES REQUIRED. Standalone origin of Scott Lang and Pym shrinking tech."
+  },
+  13: {
+    minimum: [6, 9, 11],
+    why: {
+      6: "Establishes the core Avengers team.",
+      9: "Introduces Bucky Barnes as the hunted Winter Soldier.",
+      11: "Causes the Sokovia incident leading to political division."
+    }
+  },
+  14: {
+    minimum: [],
+    why: {},
+    message: "NO PREVIOUS MOVIES REQUIRED. Standalone origin of Stephen Strange and the mystic arts."
+  },
+  15: {
+    minimum: [10],
+    why: {
+      10: "Introduces the Guardians family dynamic and Peter Quill's background."
+    }
+  },
+  16: {
+    minimum: [13],
+    why: {
+      13: "Introduces Peter Parker and his mentorship under Tony Stark."
+    }
+  },
+  17: {
+    minimum: [6],
+    why: {
+      6: "Establishes Thor and Hulk before they end up stranded on Sakaar."
+    }
+  },
+  18: {
+    minimum: [13],
+    why: {
+      13: "Introduces T'Challa taking the Wakandan throne after King T'Chaka's death."
+    }
+  },
+  19: {
+    minimum: [6, 11, 13, 17],
+    why: {
+      6: "Assembles Earth's defenders and introduces Loki's scepter.",
+      11: "Introduces Vision and the Mind Stone.",
+      13: "Explains why the Avengers are fractured and divided.",
+      17: "Directly leads into Thanos attacking Thor's Asgardian refugee ship."
+    }
+  },
+  20: {
+    minimum: [12, 13],
+    why: {
+      12: "Introduces Scott Lang, Hank Pym, and Hope van Dyne.",
+      13: "Explains Scott's house arrest following the airport battle."
+    }
+  },
+  21: {
+    minimum: [],
+    why: {},
+    message: "NO PREVIOUS MOVIES REQUIRED. Standalone origin of Carol Danvers set in 1995."
+  },
+  22: {
+    minimum: [6, 11, 19],
+    why: {
+      6: "Establishes the original six Avengers.",
+      11: "Introduces Vision, Mind Stone, and Sokovia stakes.",
+      19: "Direct prerequisite showing Thanos' snap wiping out half of all life."
+    }
+  },
+  23: {
+    minimum: [16, 22],
+    why: {
+      16: "Introduces Peter Parker and his high school friends.",
+      22: "Deals directly with the global aftermath of Tony Stark's sacrifice."
+    }
+  }
 };
 
 /**
- * Resolves full watch guide details for a given movie ID or title.
+ * Returns the aggressively minimal watch path for a target movie ID.
  */
-export function getWatchGuide(targetMovieId) {
+export function getMinimumWatchPath(targetMovieId) {
   const targetMovie = infinitySagaMovies.find((m) => m.id === Number(targetMovieId));
   if (!targetMovie) return null;
 
-  const mapping = watchGuideMappings[targetMovie.id] || { mustWatch: [], optional: [] };
+  const data = minimalWatchMappings[targetMovie.id] || { minimum: [], why: {} };
 
-  // Resolve movie objects in chronological order (by id)
-  const mustWatchMovies = mapping.mustWatch
-    .map((id) => infinitySagaMovies.find((m) => m.id === id))
+  const prerequisites = data.minimum
+    .map((id) => {
+      const movie = infinitySagaMovies.find((m) => m.id === id);
+      return movie ? { movie, why: data.why[id] || 'Provides essential story context.' } : null;
+    })
     .filter(Boolean)
-    .sort((a, b) => a.id - b.id);
+    .sort((a, b) => a.movie.id - b.movie.id);
 
-  const optionalMovies = mapping.optional
-    .map((id) => infinitySagaMovies.find((m) => m.id === id))
-    .filter(Boolean)
-    .sort((a, b) => a.id - b.id);
-
-  // Watch Path sequence leading up to target movie
-  const watchPath = [...mustWatchMovies, targetMovie];
-
-  // Calculate total runtime in hours
-  const parseRuntime = (str) => parseInt(str || '120', 10);
-
-  const mustWatchMinutes = mustWatchMovies.reduce((sum, m) => sum + parseRuntime(m.runtime), 0);
-  const totalMinutes = watchPath.reduce((sum, m) => sum + parseRuntime(m.runtime), 0);
-
-  const mustWatchHours = Math.round(mustWatchMinutes / 60);
-  const totalHours = Math.round(totalMinutes / 60);
+  const watchPath = [...prerequisites.map((p) => p.movie), targetMovie];
 
   return {
     targetMovie,
-    mustWatchMovies,
-    optionalMovies,
+    prerequisites,
+    count: prerequisites.length,
+    message: data.message || null,
     watchPath,
-    totalMustWatch: mustWatchMovies.length,
-    totalOptional: optionalMovies.length,
-    mustWatchHours,
-    totalHours,
   };
 }
