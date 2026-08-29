@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/three": "^0.185.4",
     "framer-motion": "^13.1.1",
     "lucide-react": "^1.37.0",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "three": "^0.185.1"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import InfinityThreeScene from './InfinityThreeScene';
 
 export default function InfinityHero() {
   const scrollToTimeline = () => {
@@ -7,6 +8,9 @@ export default function InfinityHero() {
 
   return (
     <section className="infinity-hero-section">
+      {/* 3D Three.js Cosmic Background */}
+      <InfinityThreeScene />
+
       <div className="hero-bg-overlay" />
       <div className="hero-grid-pattern" />
 
@@ -41,3 +45,4 @@ export default function InfinityHero() {
     </section>
   );
 }
+
